@@ -1,0 +1,29 @@
+<!-- reservations.html -->
+<section id="reservations-chambres">
+    <h2>Gestion des réservations de chambres</h2>
+    <button class="btn btn-primary" onclick="loadReservations()">Voir les réservations existantes</button>
+    <button class="btn btn-success" onclick="openReservationForm()">Créer une nouvelle réservation</button>
+    <div id="reservations-list"></div>
+</section>
+
+<!-- Formulaire de réservation -->
+<div id="reservation-form" style="display:none;">
+    <h3>Créer une nouvelle réservation</h3>
+    <form onsubmit="submitReservation(event)">
+        <label for="client">Choix du client :</label>
+        <select id="client">
+            <option value="new">Ajouter un nouveau client</option>
+            <!-- Options de clients existants -->
+        </select>
+        <div id="new-client-fields" style="display:none;">
+            <label for="new-client-name">Nom du client :</label>
+            <input type="text" id="new-client-name" required>
+        </div>
+        <label for="dates">Choix des dates :</label>
+        <input type="date" id="start-date" required>
+        <input type="date" id="end-date" required>
+        <label for="capacity">Capacité :</label>
+        <input type="number" id="capacity" required>
+        <button type="submit" class="btn btn-primary">Réserver</button>
+    </form>
+</div>
